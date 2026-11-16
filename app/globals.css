@@ -1,0 +1,213 @@
+@import "tailwindcss";
+
+@theme {
+  --color-urban-bg: #F5F1EC;
+  --color-urban-surface: #EFE8E0;
+  --color-urban-ink: #111111;
+  --color-urban-muted: #736E67;
+  --color-urban-tan: #B38B66;
+  --color-urban-tan-hover: #9E7450;
+  --color-urban-tan-light: #DFC4AA;
+  --color-urban-card: #F7F4F0;
+  --color-urban-border: #E3DBD2;
+
+  --color-bg: #F5F1EC;
+  --color-surface: #EFE8E0;
+  --color-ink: #111111;
+  --color-tan: #B38B66;
+  --color-card: #F7F4F0;
+  --color-border: #E3DBD2;
+
+  --font-display: var(--font-bebas-neue), var(--font-oswald), sans-serif;
+  --font-heading: var(--font-oswald), var(--font-bebas-neue), sans-serif;
+  --font-sans: var(--font-inter), system-ui, -apple-system, sans-serif;
+
+  --radius-card: 14px;
+  --radius-card-sm: 12px;
+  --radius-card-lg: 16px;
+}
+
+:root {
+  --bg: #F5F1EC;
+  --surface: #EFE8E0;
+  --ink: #111111;
+  --tan: #B38B66;
+  --card: #F7F4F0;
+  --border: #E3DBD2;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: #F5F1EC;
+  color: #111111;
+}
+
+body {
+  background-color: #F5F1EC;
+  color: #111111;
+  font-family: var(--font-inter), sans-serif;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* Typography Helpers */
+.font-display {
+  font-family: var(--font-bebas-neue), var(--font-oswald), sans-serif;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.font-heading {
+  font-family: var(--font-oswald), sans-serif;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.tracking-streetwear {
+  letter-spacing: 0.22em;
+}
+
+/* Buttons - Sharp rectangular streetwear styling */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background-color: #111111;
+  color: #FFFFFF;
+  padding: 0.875rem 1.75rem;
+  font-family: var(--font-oswald), sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-radius: 0px;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+  border: 1px solid #111111;
+}
+
+.btn-primary:hover {
+  background-color: #B38B66;
+  border-color: #B38B66;
+  color: #FFFFFF;
+}
+
+.btn-primary:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background-color: transparent;
+  color: #111111;
+  border: 1px solid #111111;
+  padding: 0.875rem 1.75rem;
+  font-family: var(--font-oswald), sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-radius: 0px;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+}
+
+.btn-secondary:hover {
+  background-color: #111111;
+  color: #FFFFFF;
+}
+
+.btn-tan {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background-color: #B38B66;
+  color: #FFFFFF;
+  padding: 0.875rem 1.75rem;
+  font-family: var(--font-oswald), sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-radius: 0px;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+  border: 1px solid #B38B66;
+}
+
+.btn-tan:hover {
+  background-color: #9E7450;
+  border-color: #9E7450;
+}
+
+/* Streetwear Badges & Tags */
+.tag-new {
+  background-color: #111111;
+  color: #FFFFFF;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 0.25rem 0.5rem;
+  line-height: 1;
+}
+
+.tag-sale {
+  background-color: #B38B66;
+  color: #FFFFFF;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 0.25rem 0.5rem;
+  line-height: 1;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #F5F1EC;
+}
+::-webkit-scrollbar-thumb {
+  background: #E3DBD2;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #B38B66;
+}
+
+/* Skeleton animation */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.skeleton-shimmer {
+  background: linear-gradient(
+    90deg,
+    #EFE8E0 25%,
+    #F7F4F0 50%,
+    #EFE8E0 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.6s infinite ease-in-out;
+}

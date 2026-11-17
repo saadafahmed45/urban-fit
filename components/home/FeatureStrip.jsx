@@ -1,58 +1,52 @@
-import Link from 'next/link';
-import { Flame, Trophy, Sparkles, Truck } from 'lucide-react';
+import { Truck, ShieldCheck, RefreshCw, Headphones } from 'lucide-react';
 
-const FEATURES = [
-  {
-    icon: Flame,
-    title: 'TRENDING NOW',
-    subtitle: 'Street silhouettes taking over',
-    href: '/shop?isTrending=true',
-  },
-  {
-    icon: Trophy,
-    title: 'BEST SELLERS',
-    subtitle: 'Consistently sold out drops',
-    href: '/shop?isBestSeller=true',
-  },
-  {
-    icon: Sparkles,
-    title: 'NEW ARRIVALS',
-    subtitle: 'Fresh cuts from the latest batch',
-    href: '/shop?isNew=true',
-  },
+const PILLARS = [
   {
     icon: Truck,
-    title: 'FAST DELIVERY',
-    subtitle: 'Free on all orders over $100',
-    href: '/shop',
+    title: 'FREE SHIPPING',
+    description: 'On all orders above $100',
+  },
+  {
+    icon: ShieldCheck,
+    title: 'PREMIUM QUALITY',
+    description: '480+ GSM heavyweight fleece',
+  },
+  {
+    icon: RefreshCw,
+    title: 'EASY RETURNS',
+    description: '14-day hassle-free returns',
+  },
+  {
+    icon: Headphones,
+    title: '24/7 SUPPORT',
+    description: "We're here to assist you",
   },
 ];
 
 export default function FeatureStrip() {
   return (
-    <section className="bg-[#EFE8E0] py-6 border-b border-[#E3DBD2]">
+    <section className="bg-white border-b border-[#E3DBD2] py-6 sm:py-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
-          {FEATURES.map((item, idx) => {
-            const Icon = item.icon;
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 divide-y sm:divide-y-0 sm:divide-x divide-border">
+          {PILLARS.map((pillar, idx) => {
+            const Icon = pillar.icon;
             return (
-              <Link
+              <div
                 key={idx}
-                href={item.href}
-                className="group flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left gap-3 p-3.5 bg-[#F5F1EC] border border-[#E3DBD2] rounded-[12px] hover:border-[#111111] transition-all duration-200"
+                className="flex items-center gap-3.5 pt-3 sm:pt-0 sm:px-4 first:pt-0 first:pl-0"
               >
-                <div className="w-10 h-10 rounded-full bg-[#EFE8E0] border border-[#E3DBD2] flex items-center justify-center shrink-0 group-hover:bg-[#111111] group-hover:text-white transition-colors">
-                  <Icon className="w-5 h-5 text-[#B38B66] group-hover:text-white transition-colors" />
+                <div className="w-10 h-10 rounded-full bg-[#F5F1EC] border border-[#E3DBD2] flex items-center justify-center shrink-0 text-[#111111]">
+                  <Icon className="w-4 h-4 text-[#B38B66]" />
                 </div>
                 <div>
-                  <h3 className="font-heading text-xs uppercase tracking-wider font-semibold text-[#111111] group-hover:text-[#B38B66] transition-colors">
-                    {item.title}
-                  </h3>
-                  <p className="font-sans text-[11px] text-[#736E67] mt-0.5 leading-snug">
-                    {item.subtitle}
+                  <h4 className="font-heading font-bold text-xs uppercase tracking-wider text-[#111111]">
+                    {pillar.title}
+                  </h4>
+                  <p className="font-sans text-[11px] text-[#736E67] mt-0.5 leading-tight">
+                    {pillar.description}
                   </p>
                 </div>
-              </Link>
+              </div>
             );
           })}
         </div>

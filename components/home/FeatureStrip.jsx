@@ -1,24 +1,24 @@
-import { Truck, ShieldCheck, RefreshCw, Headphones } from 'lucide-react';
+import { Truck, ShieldCheck, RefreshCw, Headphones } from "lucide-react";
 
 const PILLARS = [
   {
     icon: Truck,
-    title: 'FREE SHIPPING',
-    description: 'On all orders above $100',
+    title: "FREE SHIPPING",
+    description: "On all orders above $100",
   },
   {
     icon: ShieldCheck,
-    title: 'PREMIUM QUALITY',
-    description: '480+ GSM heavyweight fleece',
+    title: "PREMIUM QUALITY",
+    description: "480+ GSM heavyweight fleece",
   },
   {
     icon: RefreshCw,
-    title: 'EASY RETURNS',
-    description: '14-day hassle-free returns',
+    title: "EASY RETURNS",
+    description: "14-day hassle-free returns",
   },
   {
     icon: Headphones,
-    title: '24/7 SUPPORT',
+    title: "24/7 SUPPORT",
     description: "We're here to assist you",
   },
 ];
